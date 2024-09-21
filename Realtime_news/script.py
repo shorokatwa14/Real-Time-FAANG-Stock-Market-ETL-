@@ -42,7 +42,6 @@ def convert_json_to_csv():
                         })
     print("done")
 
-# القائمة الرئيسية لأسهم FAANG
 faang = ['AAPL', 'AMZN', 'META', 'GOOGL', 'NFLX']
 def job():
     download_faang_news(faang)
