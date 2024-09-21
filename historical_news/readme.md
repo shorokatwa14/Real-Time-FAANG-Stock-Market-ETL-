@@ -1,4 +1,3 @@
-![data_saved_hdfs](https://github.com/user-attachments/assets/d58e05d7-1599-4ff7-a127-075b8b073468)
 # **FAANG Stock Sentiment Analysis and Prediction**
 
 ## **Project Overview**
@@ -68,14 +67,18 @@ Next, the sentiment data is loaded into **Apache Spark** for further processing 
 ### **5. Data Storage and Visualization**
 
 The processed data is then moved to **MongoDB** for storage. MongoDB allows us to visualize the trends and insights from the sentiment data through interactive dashboards.
+![stock_price_and_sentiment](https://github.com/user-attachments/assets/a030303a-5f95-478d-880d-5884c5860529)
 
 ### **6. Modeling and Prediction**
 
 To predict future stock movements (up or down), we applied several machine learning models:
   
   - **Random Forest (RF)**
+  - ![calculating_accuracy_rf](https://github.com/user-attachments/assets/1437ad44-8902-47bb-8a39-63376d69c9d0)
   - **XGBoost**
+  - ![calculating_accuracy_XGBoost](https://github.com/user-attachments/assets/a40d2c48-3849-4189-adfd-190704918966)
   - **LSTM (Long Short-Term Memory)**
+  - ![calculating_accuracy_LSTM](https://github.com/user-attachments/assets/3c4d16f0-8a84-4f93-8195-221b3eda3c98)
 
 These models were trained using the sentiment data to predict whether the stock price will increase or decrease for each FAANG company.
 
