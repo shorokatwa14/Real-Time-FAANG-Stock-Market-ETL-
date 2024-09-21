@@ -1,4 +1,4 @@
-
+![data_saved_hdfs](https://github.com/user-attachments/assets/d58e05d7-1599-4ff7-a127-075b8b073468)
 # **FAANG Stock Sentiment Analysis and Prediction**
 
 ## **Project Overview**
@@ -40,20 +40,24 @@ This project aims to predict whether the stock prices of FAANG companies (Facebo
 The project starts by ingesting historical news data from GDELT (Global Database of Events, Language, and Tone). We use **Apache Flume** to collect news data streams and store them into HDFS.
 
 - **Configuration File**: The Flume agent is configured in [GDELT.conf](./GDELT.conf) to fetch news data continuously.
+![data_saved_hdfs](https://github.com/user-attachments/assets/79d24065-3527-4715-bb47-21c747271362)
 
 ### **2. Data Preprocessing**
 
 Once the data is ingested into HDFS, the news files, which are in a compressed format, need to be **unzipped**. After unzipping, the dataset is filtered to focus on FAANG-related news articles.
 
 - **Unzipping Files**: The script [unzipfiles.py](./unzipfiles.py) is used to extract the zipped news files.
-  
+  ![unzipping_the_data](https://github.com/user-attachments/assets/000c89b7-f76c-4ffb-ac3f-0848578a0bb4)
+
 - **Extracting Relevant Data**: After extracting the URLs, only FAANG-related news articles are retained using the [get_from_flume.py](./get_from_flume.py) script.
+![sentiment_score_faang](https://github.com/user-attachments/assets/2907d2db-7000-4399-8cff-574e4bc64784)
 
 ### **3. Sentiment Analysis**
 
 For each FAANG-related news article, we compute a **sentiment score** that indicates the tone of the news (positive, negative, or neutral). This score will be used to analyze how news sentiment influences stock movements.
 
 - **Sentiment Score Extraction**: Sentiment analysis is performed using the [faang_sentiment.py](./faang_sentiment.py) script to assign sentiment values for FAANG companies.
+![filtering_the_data](https://github.com/user-attachments/assets/00306e60-0854-4c92-ab19-c322c7ff7562)
 
 ### **4. Data Processing with Spark**
 
@@ -161,18 +165,4 @@ jupyter notebook modeling_insights.ipynb
 
 ---
 
-## **Future Enhancements**
 
-1. **Enhance Feature Set**:
-   - Integrate additional financial indicators such as moving averages (SMA, EMA) and Relative Strength Index (RSI) to improve prediction accuracy.
-
-2. **Expand Sentiment Sources**:
-   - Incorporate additional news sources or social media sentiment (e.g., Twitter) to increase data coverage and provide more insights.
-
-3. **Real-time Prediction**:
-   - Implement a real-time data pipeline that predicts stock movements as new news articles are published.
-
-4. **Model Optimization**:
-   - Further tune hyperparameters for Random Forest, XGBoost, and LSTM models to enhance prediction accuracy.
-
----
